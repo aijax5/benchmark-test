@@ -1,3 +1,5 @@
+import { simpleObj } from "./data";
+
 var serialize = require('serialize-javascript');
 
 const deserialize = (serialObj) => {
@@ -59,10 +61,10 @@ const testObject = [
 ];
 
 // const serialObj = serialize(testObject);
-let tempString, tempObj;
+let serString, tempObj;
 const testMarshall = (count, myObj)=>{
   while(count--){
-    tempString = serialize(myObj);
+    serString = serialize(myObj);
   }
 }
 
@@ -83,7 +85,7 @@ testMarshall(1000,testObject);
 console.timeEnd('first_serialize')
 
 console.time('first_deserialize');
-testMarshall(1000,tempString);
+testMarshall(1000,serString);
 console.timeEnd('first_deserialize');
 
 console.log(
@@ -94,11 +96,11 @@ console.log(
 	"---------------------------------- isJSON = false | simple object ----------------------------------"
 );
 console.time('second_serialize');
-testMarshall(1000,testObject);
+testMarshall(1000,simpleObj);
 console.timeEnd('second_serialize')
 
 console.time('second_deserialize');
-testMarshall(1000,tempString);
+testMarshall(1000,serString);
 console.timeEnd('second_deserialize');
 
 console.log(
@@ -109,11 +111,11 @@ console.log(
 	"---------------------------------- isJSON = true | simple object ----------------------------------"
 );
 console.time('third_serialize');
-testMarshall(1000,testObject);
+testMarshall(1000,simpleObj);
 console.timeEnd('third_serialize')
 
 console.time('third_deserialize');
-testMarshall(1000,tempString);
+testMarshall(1000,serString);
 console.timeEnd('third_deserialize');
 
 console.log(
