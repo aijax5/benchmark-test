@@ -259,3 +259,58 @@ export const simpleObj = {
 		],
 	},
 };
+
+const dateObj = new Date("2021-09-02T17:38:54.232Z");
+
+export const testObject = [
+	{
+		_id: "613e4f3656491508e2f13d2b",
+		updated_at: dateObj,
+		imposterGotMeLike: [true, false, true, false]
+	},
+	{
+		_id: "6142fb11f3417fdf948ec5a9",
+		updated_at: new Date("2021-09-02T17:38:54.232Z"),
+		complex: {
+			str: "string",
+			num: 0,
+			obj: { foo: "foo" },
+			arr: [1, 2, 3],
+			bool: true,
+			nil: null,
+			undef: undefined,
+			inf: Infinity,
+			date: new Date("Thu, 28 Apr 2016 22:02:17 GMT"),
+			map: new Map([["hello", "world"]]),
+			set: new Set([123, 456]),
+			fn: function echo(arg) {
+				return arg;
+			},
+			re: /([^\s]+)/g,
+			big: BigInt(10),
+			complexer: {
+				str: "string",
+				num: 0,
+				obj: { foo: "foo" },
+				arr: [1, 2, 3],
+				bool: true,
+				nil: null,
+				undef: undefined,
+				inf: Infinity,
+				date: new Date("Thu, 28 Apr 2016 22:02:17 GMT"),
+				map: new Map([["hello", "world"]]),
+				set: new Set([123, 456]),
+				fn: function echo(arg) {
+					return arg;
+				},
+				re: /([^\s]+)/g,
+				big: BigInt(10)
+			}
+		}
+	},
+	{
+		_id: "61643c7c6ad15e3e86b73418",
+		updated_at: dateObj,
+		strArray: ["I", "don't like oat meal, ", "So I Cerealized it"]
+	}
+];
