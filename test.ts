@@ -1,6 +1,7 @@
-import { simpleObj, testObject } from './data';
+import { getSimpleObj, testObject } from './data';
 
-var serialize = require('serialize-javascript');
+const simpleObj = getSimpleObj();
+const serialize = require('serialize-javascript');
 
 const deserialize = (serialObj) => {
 	return eval('(' + serialObj + ')');
@@ -41,7 +42,7 @@ console.log(
 console.time('second_serialize');
 testMarshall(1000, simpleObj);
 console.timeEnd('second_serialize');
-console.log({ serString });
+// console.log({ serString });
 console.time('second_deserialize');
 testUnMarshall(1000, serString);
 console.timeEnd('second_deserialize');

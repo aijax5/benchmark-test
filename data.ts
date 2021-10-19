@@ -334,8 +334,7 @@ export const testObject = [
 		strArray: ['I', "don't like oat meal, ", 'So I Cerealized it'],
 	},
 ];
-
-export const simpleObj = {
+const simpleObj = {
 	data: {
 		playlistsByProject: [
 			{
@@ -615,4 +614,17 @@ export const simpleObj = {
 			},
 		],
 	},
+};
+
+export const getSimpleObj = () => {
+	simpleObj.data.playlistsByProject.map((obj) => {
+		obj['created'] = new Date(obj.created_at);
+		obj['updated'] = new Date(obj.updated_at);
+		return obj;
+	});
+	console.log(
+		'num of objects in per loop',
+		simpleObj.data.playlistsByProject.length
+	);
+	return simpleObj;
 };

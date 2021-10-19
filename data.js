@@ -281,7 +281,7 @@
 // 	},
 // };
 exports.__esModule = true;
-exports.simpleObj = exports.testObject = void 0;
+exports.getSimpleObj = exports.testObject = void 0;
 var dateObj = new Date('2021-09-02T17:38:54.232Z');
 exports.testObject = [
     {
@@ -335,7 +335,7 @@ exports.testObject = [
         strArray: ['I', "don't like oat meal, ", 'So I Cerealized it']
     },
 ];
-exports.simpleObj = {
+var simpleObj = {
     data: {
         playlistsByProject: [
             {
@@ -608,3 +608,13 @@ exports.simpleObj = {
         ]
     }
 };
+var getSimpleObj = function () {
+    simpleObj.data.playlistsByProject.map(function (obj) {
+        obj['created'] = new Date(obj.created_at);
+        obj['updated'] = new Date(obj.updated_at);
+        return obj;
+    });
+    console.log('num of objects in per loop', simpleObj.data.playlistsByProject.length);
+    return simpleObj;
+};
+exports.getSimpleObj = getSimpleObj;
